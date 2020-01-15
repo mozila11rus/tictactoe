@@ -58,25 +58,25 @@ public class MainClass {
             if (count == DOTS_TO_WIN) {return true;}
             else { count = 0;}
         }
+
+        int j = 0;
+
         for (int i = SIZE-1; i >= 0; i--) {
-            int j = 0;
                 if (map[i][j] == symb) {
                     count++;
                     j++;
                 }
         }
         if(count == DOTS_TO_WIN) {return true;}
-        else {count = 0;}
+        else {count = 0; j = 0;}
 
         for (int i = 0; i < SIZE; i++) {
-            int j = 0;
             if (map[i][j] == symb) {
                 count++;
                 j++;
             }
         }
         if(count == DOTS_TO_WIN) {return true;}
-        else { count = 0;}
         return false;
     }
     public static boolean isMapFull() {
